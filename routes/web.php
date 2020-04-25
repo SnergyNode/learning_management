@@ -47,9 +47,12 @@ Route::group(['middleware'=>'admin'], function () {
         Route::get('courses', 'AdminController@showcourses')->name('courses');
         Route::resource('assess', 'AssessmentController');
         Route::resource('user', 'UserController');
+        Route::resource('quest', 'QuestionController');
 
+        Route::get('assessment/manage/{unid}', 'AssessmentController@manage')->name('manage.assessment');
 
         Route::get('logout', 'AuthController@logoutAdmin')->name('admin.logout');
+
     });
 });
 

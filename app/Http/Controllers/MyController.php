@@ -104,4 +104,6 @@ class MyController extends Controller
 
         return ["status"=>$msg];
     }
+
+    public function uploadImage(){}
 }

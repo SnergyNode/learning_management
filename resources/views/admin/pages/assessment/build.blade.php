@@ -11,7 +11,7 @@
         <div class="container-fluid">
 
             <div class="page-section">
-                <h4 class="fs-14">New Assessments</h4>
+                <h4 class="fs-14">Manage Assessment | {{ $assessment->title }}</h4>
             </div>
 
             <div class="row" data-toggle="isotope">
@@ -19,21 +19,22 @@
                     <div class="panel panel-default paper-shadow" data-z="0.5">
                         <div class="panel-heading">
                             <p class="text-subhead text-light mb-5">
-                                Create New Assessment
+                                Assessment Manager
 
                             </p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="panel-body">
                             <div class="">
-                                <form action="{{ route('assess.store') }}" method="post" enctype="multipart/form-data">
+                                <h5 class="">Assessment Info</h5>
+                                <form action="{{ route('assess.update', $assessment->unid) }}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
-
+                                    {{ method_field('put') }}
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
                                                 <lable>Title *</lable>
-                                                <input type="text" name="title" class="form-control" required autocomplete="off" placeholder="Assessment Title">
+                                                <input type="text" name="title" class="form-control" autocomplete="off" placeholder="Assessment Title" value="{{ $assessment->title }}">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
@@ -48,12 +49,12 @@
                                             <div class="form-group">
                                                 <lable>Mode *</lable>
                                                 <select required name="mode" class="form-control" autocomplete="off" >
-                                                    <option value="timed">Timed</option>
-                                                    <option value="not_timed">Not Timed</option>
-                                                    <option value="timed_expire">Timed and Expiration</option>
-                                                    <option value="timed_begin">Timed and Entry Hour</option>
-                                                    <option value="timed_begin_expire">Timed, Entry Hour and Expiration</option>
-                                                    <option value="begin_expire">Entry Hour and Expiration</option>
+                                                    <option value="timed" {{ $assessment->mode==='timed'?'selected':'' }}>Timed</option>
+                                                    <option value="not_timed" {{ $assessment->mode==='not_timed'?'selected':'' }}>Not Timed</option>
+                                                    <option value="timed_expire" {{ $assessment->mode==='timed_expire'?'selected':'' }}>Timed and Expiration</option>
+                                                    <option value="timed_begin" {{ $assessment->mode==='timed_begin'?'selected':'' }}>Timed and Entry Hour</option>
+                                                    <option value="timed_begin_expire" {{ $assessment->mode==='timed_begin_expire'?'selected':'' }}>Timed, Entry Hour and Expiration</option>
+                                                    <option value="begin_expire" {{ $assessment->mode==='begin_expire'?'selected':'' }}>Entry Hour and Expiration</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -87,8 +88,23 @@
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
-                                                <lable>Complete </lable>
-                                                <button class="btn btn-primary btn-block" type="submit">Create Assessment</button>
+                                                <lable>Update </lable>
+                                                <button class="btn btn-primary btn-block" type="submit">Update Assessment</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <hr>
+                                <h5 class="">Question Input</h5>
+                                <form action="{{ route('quest.store') }}" method="post" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <lable>Title *</lable>
+                                                <input type="text" name="title" class="form-control" autocomplete="off" placeholder="Assessment Title" value="{{ $assessment->title }}">
                                             </div>
                                         </div>
                                     </div>
