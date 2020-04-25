@@ -22,11 +22,11 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <h5 class="text-center">Admin</h5>
-                                    <p class="text-center">1</p>
+                                    <p class="text-center">{{ $admin->count() }}</p>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <h5 class="text-center">Students</h5>
-                                    <p class="text-center">1</p>
+                                    <p class="text-center">{{ $users->count() }}</p>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <h5 class="text-center">Assessments</h5>
-                                    <p class="text-center">1</p>
+                                    <p class="text-center">{{ $assess->count() }}</p>
                                 </div>
                             </div>
                         </div>

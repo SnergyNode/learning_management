@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Model\Admin;
+use App\Model\Assessment;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -84,6 +86,13 @@ class AdminController extends Controller
     }
 
     public function dashboard(Request $request){
-        return view('admin.pages.dashboard.index');
+        $users = User::select(['id'])->get();
+        $ass = Assessment::select(['id'])->get();
+        $admins = Admin::select(['id'])->get();
+
+        return view('admin.pages.dashboard.index')
+            ->with('users', $users)
+            ->with('assess', $ass)
+            ->with('admin', $admins);
     }
 }
