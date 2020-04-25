@@ -16,7 +16,7 @@
         <ul class="sidebar-menu">
             <li class="{{ @$sidebar['dashboard'] }}"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-bar-chart-o"></i><span>Dashboard</span></a></li>
             <li><a href="#"><i class="fa fa-users"></i><span>Administrators</span></a></li>
-            <li><a href="{{ route('user.index') }}"><i class="fa fa-users"></i><span>Students</span></a></li>
+            <li class="{{ @$sidebar['students'] }}"><a href="{{ route('user.index') }}"><i class="fa fa-users"></i><span>Students</span></a></li>
             <li class="hasSubmenu {{ @$sidebar['course-parent'] }}" >
                 <a href="#course-menu"><i class="fa fa-mortar-board"></i><span>Courses</span></a>
                 <ul id="course-menu">

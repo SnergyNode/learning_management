@@ -60,7 +60,7 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
                                                 <lable>Duration | Minutes <small> (ignore if mode is not timed, numbers only)</small></lable>
-                                                <input type="text" name="duration" class="form-control" autocomplete="off" placeholder="Duration in minutes">
+                                                <input type="text" onkeypress="return isNumberKey(event);" name="duration" class="form-control" autocomplete="off" placeholder="Duration in minutes">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">

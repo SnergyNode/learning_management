@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Answer;
 use App\Model\Question;
 use Illuminate\Http\Request;
 
-class QuestionController extends Controller
+class QuestionController extends MyController
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +36,40 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $question = new Question();
+        $question->unid = $this->generateId('Qs', 28);
+        $question->assessment_key = $request->input('assessment_key');
+        $question->question = $request->input('question');
+        $question->ans_input = $request->input('ans_input');
+
+        //ensure there is a correct answer selected before submitting
+        $none_right = true;
+        foreach ($request->input('item_answer_is_correct') as $key=>$val){
+            if($val==='yes'){
+                $none_right = false;
+            }
+        }
+
+        if($none_right){
+            return back()->withErrors(['No correct answer selected']);
+        }
+
+        $answer_items = $request->input('item_answer_is_correct');
+        foreach ($request->input('item_answer_option') as $key=>$val){
+            $answer = new Answer();
+            $answer->unid = $this->generateId('Ans', 27);
+            $answer->assessment_key = $request->input('assessment_key');
+            $answer->question_key = $question->unid;
+            $answer->answer = $val;
+            $answer->correct = $answer_items[$key];
+            $answer->save();
+        }
+
+        $question->save();
+
+        return back()->with('Question saved successfully');
+
     }
 
     /**

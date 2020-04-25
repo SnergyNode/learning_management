@@ -1,6 +1,7 @@
 <?php
     $sidebar['assess'] = 'active';
     $sidebar['course-parent'] = 'active';
+    $injections = ['admin.pages.assessment.logic'];
 ?>
 @extends('admin.layouts.main')
 
@@ -11,8 +12,10 @@
         <div class="container-fluid">
 
             <div class="page-section">
-                <h4 class="fs-14">Manage Assessment | {{ $assessment->title }}</h4>
+                <h4 class="">Manage Assessment | {{ $assessment->title }}</h4>
             </div>
+
+            @include('layouts.notice')
 
             <div class="row" data-toggle="isotope">
                 <div class="item col-xs-12 col-lg-12">
@@ -26,7 +29,46 @@
                         </div>
                         <div class="panel-body">
                             <div class="">
-                                <h5 class="">Assessment Info</h5>
+                                <h4 class="">Question Input</h4>
+                                <form action="{{ route('quest.store') }}" method="post" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+
+                                    <input type="hidden" name="assessment_key" value="{{ $assessment->unid }}">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <lable>Question *</lable>
+                                                <textarea cols="5" rows="5" type="text" name="question" class="form-control" autocomplete="off" placeholder="Question">{{ old('question') }}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group">
+                                                <lable>Answer Input Type *</lable>
+                                                <select name="ans_input" class="form-control answer_option" autocomplete="off" >
+                                                    <option value="radio">Radio</option>
+                                                    <option value="checkbox">Checkbox</option>
+                                                    <option value="text">Input Field</option>
+                                                </select>
+
+                                                <br>
+                                                <br>
+
+                                                <a href="#" onclick="event.preventDefault(); addAnswer()" class="btn btn-default">Add Answer</a>
+                                                <button type="submit" class="btn btn-primary " style="margin-left: 10px">Save Question</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="build_answer_parent">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                                <hr>
+                                <h4 class="">Assessment Info</h4>
                                 <form action="{{ route('assess.update', $assessment->unid) }}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     {{ method_field('put') }}
@@ -80,9 +122,9 @@
                                             <div class="form-group">
                                                 <lable>Answer Numbering Mode</lable>
                                                 <select required name="ans_num_mode" class="form-control" autocomplete="off" >
-                                                    <option value="numeric">Numbers</option>
-                                                    <option value="alphabet">Alphabet</option>
-                                                    <option value="roman">Roman Numerals</option>
+                                                    <option value="numeric" {{ $assessment->ans_num_mode==='numeric'?'selected':'' }} >Numbers</option>
+                                                    <option value="alphabet" {{ $assessment->ans_num_mode==='alphabet'?'selected':'' }} >Alphabet</option>
+                                                    <option value="roman" {{ $assessment->ans_num_mode==='roman'?'selected':'' }} >Roman Numerals</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -96,22 +138,8 @@
                                 </form>
 
                                 <hr>
-                                <h5 class="">Question Input</h5>
-                                <form action="{{ route('quest.store') }}" method="post" enctype="multipart/form-data">
-                                    {{ csrf_field() }}
+                                <h4 class="">Assessment Questions</h4>
 
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-6">
-                                            <div class="form-group">
-                                                <lable>Title *</lable>
-                                                <input type="text" name="title" class="form-control" autocomplete="off" placeholder="Assessment Title" value="{{ $assessment->title }}">
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                </form>
                             </div>
                         </div>
 

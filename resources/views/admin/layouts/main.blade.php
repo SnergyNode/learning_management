@@ -68,9 +68,20 @@
         function goto(link) {
             window.location = link;
         }
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            return !(charCode > 31 && (charCode < 46 || charCode > 57 || charCode === 47 ));
+        }
     </script>
 
     <script src="{{ asset('js/vendor/all.js') }}"></script>
     <script src="{{ asset('js/app/app.js') }}"></script>
+
+    @if(!empty($injections))
+        @foreach($injections as $injects)
+            @include($injects)
+        @endforeach
+    @endif
 </body>
 </html>

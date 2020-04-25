@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends LogicController
@@ -13,7 +14,8 @@ class UserController extends LogicController
      */
     public function index()
     {
-        //
+        $users = User::get();
+        return view('admin.pages.students.index')->with('users', $users);
     }
 
     /**
