@@ -14,7 +14,8 @@ class AssessmentController extends Controller
      */
     public function index()
     {
-        //
+        $assessments = Assessment::get();
+        return view('admin.pages.assessment.index')->with('assessment', $assessments);
     }
 
     /**
@@ -24,7 +25,7 @@ class AssessmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.assessment.add');
     }
 
     /**

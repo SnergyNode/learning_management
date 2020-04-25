@@ -14,14 +14,14 @@
         </div>
 
         <ul class="sidebar-menu">
-            <li class="active"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-bar-chart-o"></i><span>Dashboard</span></a></li>
+            <li class="{{ @$sidebar['dashboard'] }}"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-bar-chart-o"></i><span>Dashboard</span></a></li>
             <li><a href="#"><i class="fa fa-users"></i><span>Administrators</span></a></li>
             <li><a href="{{ route('user.index') }}"><i class="fa fa-users"></i><span>Students</span></a></li>
-            <li class="hasSubmenu">
+            <li class="hasSubmenu {{ @$sidebar['course-parent'] }}" >
                 <a href="#course-menu"><i class="fa fa-mortar-board"></i><span>Courses</span></a>
                 <ul id="course-menu">
-                    <li><a href="#"><span>Courses</span></a></li>
-                    <li><a href="{{ route('assess.index') }}"><span>Assessments</span></a></li>
+                    <li class="{{ @$sidebar['courses'] }}"><a href="#"><span>Courses</span></a></li>
+                    <li class="{{ @$sidebar['assess'] }}"><a href="{{ route('assess.index') }}"><span>Assessments</span></a></li>
                 </ul>
             </li>
             <li class="hasSubmenu">

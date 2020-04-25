@@ -19,7 +19,7 @@ class MyController extends Controller
     public function welcome($user){
         $view = view('email.welcome')
             ->with("user", $user)
-            ->with("token", encrypt($user->unid));
+            ->with("token", encrypt($user->token));
         $this->sendMails($user->email, $view, 'Welcome to Learning App');
     }
 

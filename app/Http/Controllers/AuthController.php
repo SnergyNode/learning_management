@@ -80,15 +80,21 @@ class AuthController extends MyController
     }
 
     public function activate_me($token){
-        $user = User::where('token', $token)->first();
+        $toke = decrypt($token);
+        $user = User::where('token', $toke)->first();
         if(!empty($user)){
             $user->active = true;
             $user->update();
             return redirect()->route('home')->withMessage('Account and Email Activated');
-
         }
 
         return redirect()->route('home');
+    }
+
+    public function resend_code(Request $request){
+        $user = $request->user('web');
+        $this->welcome($user);
+        return back()->withMessage('Activation Code Resent');
     }
 
     public function logout(){

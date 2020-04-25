@@ -1,3 +1,4 @@
+<?php $sidebar['dashboard'] = 'active'; ?>
 @extends('admin.layouts.main')
 
 @section('content')

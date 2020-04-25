@@ -19,6 +19,10 @@
 
         @include('pages.layout.sidebar')
 
+        {{--@if(!empty($rightSideBar))--}}
+            {{--@include('pages.layout.'.$rightSideBar)--}}
+        {{--@endif--}}
+
         <div class="st-pusher" id="content">
 
 

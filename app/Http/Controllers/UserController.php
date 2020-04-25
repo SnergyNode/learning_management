@@ -95,4 +95,8 @@ class UserController extends LogicController
         return view('pages.courses.index');
     }
 
+    public function curriculum(){
+        return view('pages.courses.curriculum');
+    }
+
 }

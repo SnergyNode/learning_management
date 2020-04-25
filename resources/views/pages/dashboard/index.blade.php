@@ -24,7 +24,7 @@
                             Email not active. send activation link to <span class="text-body-2"> {{ $person->email }}. </span>
                         </div>
                         <div class="media-right media-padding">
-                            <a class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated href="#">
+                            <a class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated href="{{ route('re.activate.mail') }}">
                                 Resend Link
                             </a>
                         </div>

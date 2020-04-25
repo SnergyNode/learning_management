@@ -58,7 +58,7 @@
                         <hr class="margin-none" />
                         <div class="panel-body">
 
-                            <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="app-take-course.html">Go to course</a>
+                            <a class="btn btn-white btn-flat paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="{{ route('take.course') }}">Go to course</a>
 
                         </div>
 

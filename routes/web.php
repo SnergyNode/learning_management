@@ -29,6 +29,8 @@ Route::group(['middleware'=>'access'], function () {
         Route::get('dashboard', 'UserController@dashboard')->name('client.dashboard');
         Route::get('my-courses', 'UserController@mycourses')->name('my-courses');
         Route::get('courses', 'UserController@showcourses')->name('courses');
+        Route::get('re_activate/mail', 'AuthController@resend_code')->name('re.activate.mail');
+        Route::get('my-course/course_title', 'UserController@curriculum')->name('take.course');
 
 
         Route::get('logout', 'AuthController@logout')->name('logout');
