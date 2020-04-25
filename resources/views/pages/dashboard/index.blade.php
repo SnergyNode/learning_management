@@ -42,7 +42,7 @@
                         <ul class="list-group">
                             <li class="list-group-item media v-middle">
                                 <div class="media-body">
-                                    <a href="app-take-course.html" class="text-subhead list-group-link">Basics of HTML</a>
+                                    <a href="#" class="text-subhead list-group-link">Introduction to Microsoft Office</a>
                                 </div>
                                 <div class="media-right">
                                     <div class="progress progress-mini width-100 margin-none">
@@ -51,31 +51,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item media v-middle">
-                                <div class="media-body">
-                                    <a href="app-take-course.html" class="text-subhead list-group-link">Angular in Steps</a>
-                                </div>
-                                <div class="media-right">
-                                    <div class="progress progress-mini width-100 margin-none">
-                                        <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item media v-middle">
-                                <div class="media-body">
-                                    <a href="app-take-course.html" class="text-subhead list-group-link">Bootstrap Foundations</a>
-                                </div>
-                                <div class="media-right">
-                                    <div class="progress progress-mini width-100 margin-none">
-                                        <div class="progress-bar progress-bar-green-300" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%;">
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                         <div class="panel-footer text-right">
-                            <a href="app-student-courses.html" class="btn btn-white paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> View all</a>
+                            <a href="#" class="btn btn-white paper-shadow relative" data-z="0" data-hover-z="1" data-animated > View all</a>
                         </div>
                     </div>
                 </div>
@@ -89,11 +67,11 @@
                             <li class="list-group-item media v-middle">
                                 <div class="media-body">
                                     <h4 class="text-subhead margin-none">
-                                        <a href="app-take-quiz.html" class="list-group-link">Title of quiz goes here?</a>
+                                        <a href="#" class="list-group-link">Title of quiz goes here?</a>
                                     </h4>
                                     <div class="caption">
                                         <span class="text-light">Course:</span>
-                                        <a href="app-take-course.html">Basics of HTML</a>
+                                        <a href="#">Basics of HTML</a>
                                     </div>
                                 </div>
                                 <div class="media-right text-center">
@@ -104,11 +82,11 @@
                             <li class="list-group-item media v-middle">
                                 <div class="media-body">
                                     <h4 class="text-subhead margin-none">
-                                        <a href="app-take-quiz.html" class="list-group-link">Directives & Routing</a>
+                                        <a href="#" class="list-group-link">Directives & Routing</a>
                                     </h4>
                                     <div class="caption">
                                         <span class="text-light">Course:</span>
-                                        <a href="app-take-course.html">Angular in Steps</a>
+                                        <a href="#">Angular in Steps</a>
                                     </div>
                                 </div>
                                 <div class="media-right text-center">
@@ -119,11 +97,11 @@
                             <li class="list-group-item media v-middle">
                                 <div class="media-body">
                                     <h4 class="text-subhead margin-none">
-                                        <a href="app-take-quiz.html" class="list-group-link">Responsive & Retina</a>
+                                        <a href="#" class="list-group-link">Responsive & Retina</a>
                                     </h4>
                                     <div class="caption">
                                         <span class="text-light">Course:</span>
-                                        <a href="app-take-course.html">Bootstrap Foundations</a>
+                                        <a href="#">Bootstrap Foundations</a>
                                     </div>
                                 </div>
                                 <div class="media-right text-center">
@@ -133,7 +111,7 @@
                             </li>
                         </ul>
                         <div class="panel-footer">
-                            <a href="app-student-quizzes.html" class="btn btn-primary paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> Go to Results</a>
+                            <a href="#" class="btn btn-primary paper-shadow relative" data-z="0" data-hover-z="1" data-animated href="#"> Go to Results</a>
                         </div>
                     </div>
                 </div>

@@ -17,6 +17,15 @@ class AuthController extends MyController
         }
     }
 
+    public function authenticateAdmin(Request $request){
+        $remember = $request->input('remember')==='on'?true:false;
+        if(Auth::guard('admin')->attempt(['email'=>$request->input('email'),'password'=>$request->input('password')], $remember)){
+            return redirect()->route('admin.dashboard');
+        }else{
+            return back()->withErrors(array('email'=>'Invalid Credentials Given!'))->withInput($request->input());
+        }
+    }
+
     public function send_pass_reset_link(Request $request){
         $email = $request->input('email');
 
@@ -85,5 +94,10 @@ class AuthController extends MyController
     public function logout(){
         Auth::logout();
         return redirect()->route('home')->withMessage('Logged out successfully');
+    }
+
+    public function logoutAdmin(){
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.login')->withMessage('Logged out successfully');
     }
 }

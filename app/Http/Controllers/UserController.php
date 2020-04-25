@@ -82,6 +82,8 @@ class UserController extends LogicController
         //
     }
 
+
+    //user private views.
     public function dashboard(Request $request){
         return view('pages.dashboard.index');
     }

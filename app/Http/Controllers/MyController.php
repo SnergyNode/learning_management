@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Model\Admin;
 use Illuminate\Http\Request;
 
 class MyController extends Controller
@@ -80,5 +82,26 @@ class MyController extends Controller
             $token.= $codes[random_int(0, $max-1)];
         }
         return $prefix.$token.uniqid("", false);
+    }
+
+    public function seeder($email){
+        $msg = "Not created";
+        if(empty($email)){
+            return ["status"=>$msg];
+        }
+        $admin = Admin::where('email', $email)->first();
+        if(empty($admin)){
+            $admin = new Admin();
+            $admin->email = $email;
+            $admin->who = 4;
+            $admin->first_name = "Admin";
+            $admin->last_name = "Super";
+            $admin->password = bcrypt('password');
+            $admin->active = true;
+            $admin->save();
+            $msg = "created";
+        }
+
+        return ["status"=>$msg];
     }
 }

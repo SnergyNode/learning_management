@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class Admin
 {
@@ -15,6 +17,11 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(Auth::guard('admin')->check()){
+            $user = Auth::guard('admin')->user();
+            View::share('person', $user);
+            return $next($request);
+        }
+        return redirect()->route('admin.login')->withErrors(['User authentication required']);
     }
 }
