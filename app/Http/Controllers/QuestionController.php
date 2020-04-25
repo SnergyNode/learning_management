@@ -62,13 +62,13 @@ class QuestionController extends MyController
             $answer->assessment_key = $request->input('assessment_key');
             $answer->question_key = $question->unid;
             $answer->answer = $val;
-            $answer->correct = $answer_items[$key];
+            $answer->correct = $answer_items[$key]==="yes"?true:false;
             $answer->save();
         }
 
         $question->save();
 
-        return back()->with('Question saved successfully');
+        return back()->withMessage('Question saved successfully');
 
     }
 

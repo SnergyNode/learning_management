@@ -137,8 +137,22 @@
                                     </div>
                                 </form>
 
+                                <br>
                                 <hr>
                                 <h4 class="">Assessment Questions</h4>
+                                <div class="row">
+                                    @foreach($assessment->questions as $question)
+                                        <div class="col-sm-12 col-md-6">
+                                            <p>{{ $question->question }}</p>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            @foreach($question->answers as $answer)
+                                                <p>{{ $answer->answer }} {{ $answer->correct?"(correct)":"" }}</p>
+                                            @endforeach
+                                        </div>
+                                    @endforeach
+
+                                </div>
 
                             </div>
                         </div>
