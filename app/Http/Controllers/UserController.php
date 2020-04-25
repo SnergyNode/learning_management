@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Assessment;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -99,6 +100,12 @@ class UserController extends LogicController
 
     public function curriculum(){
         return view('pages.courses.curriculum');
+    }
+
+    public function assessments(){
+        $assessments = Assessment::get();
+        return view('pages.assessment.index')
+            ->with('assessments', $assessments);
     }
 
 }

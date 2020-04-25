@@ -26,7 +26,7 @@
                     <li><a href="{{ route('my-courses') }}"><span>My Courses</span></a></li>
                     <li><a href="#"><span>My Assessments</span></a></li>
                     <li><a href="{{ route('courses') }}"><span>Course List</span></a></li>
-                    <li><a href="#"><span>Assessments</span></a></li>
+                    <li><a href="{{ route('assessments') }}"><span>Assessments</span></a></li>
                 </ul>
             </li>
             <li class="hasSubmenu">

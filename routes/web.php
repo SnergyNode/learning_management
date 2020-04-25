@@ -32,6 +32,7 @@ Route::group(['middleware'=>'access'], function () {
         Route::get('re_activate/mail', 'AuthController@resend_code')->name('re.activate.mail');
         Route::get('my-course/course_title', 'UserController@curriculum')->name('take.course');
 
+        Route::get('assessments', 'UserController@assessments')->name('assessments');
 
         Route::get('logout', 'AuthController@logout')->name('logout');
     });

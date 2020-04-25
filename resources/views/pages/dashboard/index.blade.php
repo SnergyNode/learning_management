@@ -67,46 +67,16 @@
                             <li class="list-group-item media v-middle">
                                 <div class="media-body">
                                     <h4 class="text-subhead margin-none">
-                                        <a href="#" class="list-group-link">Title of quiz goes here?</a>
+                                        <a href="#" class="list-group-link">Microsoft Office Assessment</a>
                                     </h4>
                                     <div class="caption">
                                         <span class="text-light">Course:</span>
-                                        <a href="#">Basics of HTML</a>
+                                        <a href="#">Introduction to Microsoft Office</a>
                                     </div>
                                 </div>
                                 <div class="media-right text-center">
                                     <div class="text-display-1">5.8</div>
                                     <span class="caption text-light">Good</span>
-                                </div>
-                            </li>
-                            <li class="list-group-item media v-middle">
-                                <div class="media-body">
-                                    <h4 class="text-subhead margin-none">
-                                        <a href="#" class="list-group-link">Directives & Routing</a>
-                                    </h4>
-                                    <div class="caption">
-                                        <span class="text-light">Course:</span>
-                                        <a href="#">Angular in Steps</a>
-                                    </div>
-                                </div>
-                                <div class="media-right text-center">
-                                    <div class="text-display-1 text-green-300">9.8</div>
-                                    <span class="caption text-light">Great</span>
-                                </div>
-                            </li>
-                            <li class="list-group-item media v-middle">
-                                <div class="media-body">
-                                    <h4 class="text-subhead margin-none">
-                                        <a href="#" class="list-group-link">Responsive & Retina</a>
-                                    </h4>
-                                    <div class="caption">
-                                        <span class="text-light">Course:</span>
-                                        <a href="#">Bootstrap Foundations</a>
-                                    </div>
-                                </div>
-                                <div class="media-right text-center">
-                                    <div class="text-display-1 text-red-300">3.4</div>
-                                    <span class="caption text-light">Failed</span>
                                 </div>
                             </li>
                         </ul>
