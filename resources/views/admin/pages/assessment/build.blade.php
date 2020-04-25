@@ -138,21 +138,7 @@
                                 </form>
 
                                 <br>
-                                <hr>
-                                <h4 class="">Assessment Questions</h4>
-                                <div class="row">
-                                    @foreach($assessment->questions as $question)
-                                        <div class="col-sm-12 col-md-6">
-                                            <p>{{ $question->question }}</p>
-                                        </div>
-                                        <div class="col-sm-12 col-md-6">
-                                            @foreach($question->answers as $answer)
-                                                <p>{{ $answer->answer }} {{ $answer->correct?"(correct)":"" }}</p>
-                                            @endforeach
-                                        </div>
-                                    @endforeach
 
-                                </div>
 
                             </div>
                         </div>
@@ -160,6 +146,34 @@
                     </div>
                 </div>
             </div>
+
+            <h4>Assessment Questions</h4>
+
+            <div class="row">
+                @foreach($assessment->questions as $question)
+                    <div class="item col-xs-12 col-lg-6">
+                        <div class="panel panel-default paper-shadow" data-z="0.5">
+                            <div class="panel-heading">
+                                <h6 class="text-headline margin-none">{{ $question->question }}</h6>
+                            </div>
+                            <ul class="list-group">
+                                @foreach($question->answers as $answer)
+                                    <li class="list-group-item media v-middle">
+                                        <div class="media-body">
+                                            {{ $answer->answer }}
+                                        </div>
+                                        <div class="media-right text-center">
+                                            {{ $answer->correct?"(correct)":"" }}
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+
 
         </div>
 
