@@ -66,13 +66,13 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
                                                 <lable>Active From<small> (ignore if mode is does not contain Entry Hour)</small></lable>
-                                                <input type="time" name="active_from" class="form-control" autocomplete="off">
+                                                <input type="datetime-local" name="active_from" class="form-control" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
                                                 <lable>Expire Time<small> (ignore if mode is does not contain Expiration)</small></lable>
-                                                <input type="time" name="expire_at" class="form-control" autocomplete="off">
+                                                <input type="datetime-local" name="expire_at" class="form-control" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">

@@ -103,19 +103,19 @@
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
                                                 <lable>Duration | Minutes <small> (ignore if mode is not timed, numbers only)</small></lable>
-                                                <input type="text" name="duration" class="form-control" autocomplete="off" placeholder="Duration in minutes">
+                                                <input type="text" name="duration" class="form-control" autocomplete="off" placeholder="Duration in minutes" value="{{ $assessment->duration }}">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
                                                 <lable>Active From<small> (ignore if mode is does not contain Entry Hour)</small></lable>
-                                                <input type="time" name="active_from" class="form-control" autocomplete="off">
+                                                <input type="datetime-local" name="active_from" class="form-control" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group">
                                                 <lable>Expire Time<small> (ignore if mode is does not contain Expiration)</small></lable>
-                                                <input type="time" name="expire_at" class="form-control" autocomplete="off">
+                                                <input type="datetime-local" name="expire_at" class="form-control" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
@@ -154,7 +154,7 @@
                     <div class="item col-xs-12 col-lg-6">
                         <div class="panel panel-default paper-shadow" data-z="0.5">
                             <div class="panel-heading">
-                                <h6 class="text-headline margin-none">{{ $question->question }}</h6>
+                                <h6 class="text-headline margin-none" style="font-size: 18px">{{ $question->question }}</h6>
                             </div>
                             <ul class="list-group">
                                 @foreach($question->answers as $answer)

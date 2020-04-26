@@ -33,6 +33,7 @@ Route::group(['middleware'=>'access'], function () {
         Route::get('my-course/course_title', 'UserController@curriculum')->name('take.course');
 
         Route::get('assessments', 'UserController@assessments')->name('assessments');
+        Route::get('take-assessment/{unid}', 'UserController@take_assess')->name('take.assessment');
 
         Route::get('logout', 'AuthController@logout')->name('logout');
     });

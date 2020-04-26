@@ -5200,15 +5200,7 @@ require('./_sidebar-toggle');
 })(jQuery);
 },{"./_breakpoints":"/Code/html/themes/learning-1.1.0/lib/sidebar/js/_breakpoints.js","./_collapsible":"/Code/html/themes/learning-1.1.0/lib/sidebar/js/_collapsible.js","./_dropdown":"/Code/html/themes/learning-1.1.0/lib/sidebar/js/_dropdown.js","./_sidebar-menu":"/Code/html/themes/learning-1.1.0/lib/sidebar/js/_sidebar-menu.js","./_sidebar-toggle":"/Code/html/themes/learning-1.1.0/lib/sidebar/js/_sidebar-toggle.js"}],"/Code/html/themes/learning-1.1.0/src/js/themes/html/_countdown.js":[function(require,module,exports){
 (function ($) {
-    "use strict";
 
-    $.fn.tkCountdown = function () {
-        this.countdown({
-            until: moment().add(10, 'minute').toDate()
-        });
-    };
-
-    $('.tk-countdown').tkCountdown();
 
 })(jQuery);
 },{}],"/Code/html/themes/learning-1.1.0/src/js/themes/html/_curriculum.js":[function(require,module,exports){

@@ -43,8 +43,8 @@ class AssessmentController extends MyController
         $assessment->course_id = $request->input('course_id');
         $assessment->mode = $request->input('mode');
         $assessment->duration = $request->input('duration');
-        $assessment->active_from = $request->input('active_from');
-        $assessment->expire_at = $request->input('expire_at');
+        $assessment->active_from = !empty($request->input('active_from'))?strtotime($request->input('active_from')):null;
+        $assessment->expire_at = !empty($request->input('expire_at'))?strtotime($request->input('expire_at')):null;
         $assessment->type = $request->input('type');
         $assessment->ans_num_mode = $request->input('ans_num_mode');
         $assessment->active = true;
@@ -82,9 +82,27 @@ class AssessmentController extends MyController
      * @param  \App\Model\Assessment  $assessment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Assessment $assessment)
+    public function update(Request $request, $unid)
     {
-        //
+        $assessment = Assessment::where('unid', $unid)->first();
+        if(!empty($assessment)){
+            $assessment->title = $request->input('title');
+            $assessment->photo = $this->uploadImage();
+            $assessment->course_id = $request->input('course_id');
+            $assessment->mode = $request->input('mode');
+            $assessment->duration = $request->input('duration');
+            $assessment->active_from = !empty($request->input('active_from'))?strtotime($request->input('active_from')):null;
+            $assessment->expire_at = !empty($request->input('expire_at'))?strtotime($request->input('expire_at')):null;
+            $assessment->type = $request->input('type');
+            $assessment->ans_num_mode = $request->input('ans_num_mode');
+            $assessment->update();
+
+            return redirect()->route('manage.assessment', $assessment->unid)->withMessage('Assessment Created, Add Questions and Answers');
+        }
+
+        return redirect()->route('assess.index');
+
+
     }
 
     /**

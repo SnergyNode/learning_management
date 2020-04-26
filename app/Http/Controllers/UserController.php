@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Assessment;
+use App\Model\Question;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -106,6 +107,18 @@ class UserController extends LogicController
         $assessments = Assessment::get();
         return view('pages.assessment.index')
             ->with('assessments', $assessments);
+    }
+
+    public function take_assess($unid){
+        $assessment = Assessment::where('unid', $unid)->first();
+        if(!empty($assessment)){
+            $questions = Question::where('assessment_key', $assessment->unid)->inRandomOrder()->get();
+            return view('pages.assessment.take')
+                ->with("questions",$questions)
+                ->with("assessment",$assessment);
+        }
+
+        return back()->withErrors(['No resource found']);
     }
 
 }

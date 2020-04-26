@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <p class="text-center">
-                                            <a href="#" class="btn btn-default">Take Assessment</a>
+                                            <a href="{{ route('take.assessment', $assessment->unid) }}" class="btn btn-default">Take Assessment</a>
                                         </p>
                                     </div>
                                 </div>

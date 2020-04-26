@@ -20,7 +20,7 @@ class CreateAssessmentsTable extends Migration
             $table->string('photo')->nullable();
             $table->string('course_id')->nullable(); //not compulsory
             $table->string('mode')->nullable(); //timed, not_timed, timed_expire, timed_begin, timed_begin_expire, begin_expire
-            $table->integer('duration')->nullable();//seconds [1hr = 60 * 60]
+            $table->integer('duration')->nullable();//minutes [1hr = 60]
             $table->bigInteger('active_from')->nullable();
             $table->bigInteger('expire_at')->nullable();
             $table->string('type')->nullable(); //public , private

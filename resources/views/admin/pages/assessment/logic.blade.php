@@ -6,11 +6,11 @@
         level = level+1;
         let mother = $('.build_answer_parent');
         let elem = `<div class="row children_${level}" style="margin-bottom: 10px">
-                                    <div class="col-md-8">
+                                    <div class="col-md-7">
                                         <p><small>* Answer Option</small></p>
                                         <input type="text" name="item_answer_option[]" class="form-control" required placeholder="Answer Option" autocomplete="off">
                                     </div>
-                                    <div class="col-md-2 col-8">
+                                    <div class="col-md-3">
                                         <p><small>* Correct Answer</small></p>
                                         <select name="item_answer_is_correct[]" class="form-control" autocomplete="off">
                                             <option value="no">No</option>
