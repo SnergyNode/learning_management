@@ -11,15 +11,19 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('forgot-password', 'HomeController@forgot_password')->name('forgot.password');
-Route::get('register', 'HomeController@register')->name('register');
-Route::post('login', 'AuthController@authenticate')->name('sign_in');
-Route::post('admin/login', 'AuthController@authenticateAdmin')->name('admin.sign_in');
-Route::post('register', 'AuthController@register')->name('sign_up');
-Route::post('forgot_password', 'AuthController@send_pass_reset_link')->name('forgot_password');
+
 Route::get('u/account/{token}', 'AuthController@activate_me')->name('activate.account');
 Route::get('portal.admin', 'HomeController@admin')->name('admin.login');
+
+Route::group(['middleware'=>'alreadyLoggedIn'], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('forgot-password', 'HomeController@forgot_password')->name('forgot.password');
+    Route::get('register', 'HomeController@register')->name('register');
+    Route::post('login', 'AuthController@authenticate')->name('sign_in');
+    Route::post('admin/login', 'AuthController@authenticateAdmin')->name('admin.sign_in');
+    Route::post('register', 'AuthController@register')->name('sign_up');
+    Route::post('forgot_password', 'AuthController@send_pass_reset_link')->name('forgot_password');
+});
 
 /**
  * USER AUTH ROUTES BELOW
