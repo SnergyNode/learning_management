@@ -1,3 +1,4 @@
+<?php $ver = 0.2; ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="st-layout ls-top-navbar-large ls-bottom-footer show-sidebar sidebar-l3">
 <head>
@@ -80,7 +81,7 @@
     </script>
 
     <script src="{{ asset('js/vendor/all.js') }}"></script>
-    <script src="{{ asset('js/app/app.js') }}"></script>
+    <script src="{{ asset('js/app/app.js?v='.@$ver) }}"></script>
 
     @if(!empty($injections))
         @foreach($injections as $injects)
