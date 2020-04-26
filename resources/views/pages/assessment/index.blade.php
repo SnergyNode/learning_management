@@ -12,14 +12,14 @@
                         <h1 class="text-display-1 margin-none">Available Assessments</h1>
                     </div>
                     <div class="media-right">
-                        <a class="btn btn-white paper-shadow relative" data-z="0.5" data-hover-z="1" data-animated href="#you_are_here">All Assessments</a>
+
                     </div>
                 </div>
             </div>
 
             <div class="row" data-toggle="isotope">
                 @forelse($assessments as $assessment)
-                    <div class="item col-xs-3 col-sm-12 col-lg-4">
+                    <div class="item col-xs-12 col-sm-12 col-lg-4">
                         <div class="panel panel-default paper-shadow" data-z="0.5">
                             <div class="panel-heading">
                                 <h4 class="text-headline margin-none">{{ $assessment->title }}</h4>
